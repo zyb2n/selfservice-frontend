@@ -16,7 +16,8 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Amplify from 'aws-amplify';
+//import Amplify from 'aws-amplify';
+import Amplify from '@aws-amplify/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-notifications/lib/notifications.css';
 import './index.css';
@@ -26,10 +27,16 @@ import config from './config.json';
 
 Amplify.configure({
   Auth: {
-    region: 'us-east-1',
+    // (optional) - Enforce user authentication prior to accessing AWS resources or not
+    mandatorySignIn: true,
+
+    // (optional) - Manually set the authentication flow type. Default is 'USER_SRP_AUTH'
+    //authenticationFlowType: 'USER_PASSWORD_AUTH',
+
+    region: 'us-west-2',
     identityPoolId: config.identityPoolId,
     userPoolId: config.userPoolId,
-    userPoolWebClientId: config.userPoolWebClientId,
+    userPoolWebClientId: config.userPoolWebClientId
   },
 });
 

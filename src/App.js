@@ -139,7 +139,8 @@ class App extends Component {
         {this.renderDetailsModal()}
         <div className="row">
           <div className="col-md-8 col-md-offset-2">
-            <h3 className="page-header">Product Catalog</h3>
+            <img src="./ServiceNow-Logo.png" alt="servicenow_Logo" />
+            <h3 className="page-header">Catalog</h3>
             <SCProducts
               credentials={this.state.credentials}
               onLaunchClick={this.onLaunchClick}
@@ -148,7 +149,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-md-8 col-md-offset-2">
-            <h3 className="page-header">My Provisioned Products</h3>
+            <h3 className="page-header">Provisioned Stacks</h3>
             <SCProvisionedProducts
               credentials={this.state.credentials}
               onTerminate={this.onTerminateProduct}
